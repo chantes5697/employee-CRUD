@@ -1,0 +1,31 @@
+1. Crear app
+
+    composer create-project laravel/laravel employee-CRUD
+
+2. Crear migracion a partir de la database
+
+composer require --dev kitloong/laravel-migrations-generator
+    php artisan migrate:generate
+
+3. Crear  modelos apartir de la database
+
+composer require reliese/laravel --dev
+    php artisan vendor:publish --tag=reliese-models
+
+    # Let's refresh our config cache just in case
+    php artisan config:clear
+
+4. Crear requests
+
+    php artisan make:request [Entidad][Method]Request
+
+5. Crea los controladores
+
+    php artisan make:controller ProductController --resource --model=Product
+
+6. Ajusta las rutas
+
+    Route::resource('products', ProductController::class);
+
+7. Crea las vistas
+
